@@ -299,6 +299,10 @@ class CalculatorGame(tk.Tk):
         self.unlocked = True
         self.result_var.set(f"✅ {self._format(wrong_answer)}")
 
+        # Auto-clear the input so the next calculation starts fresh
+        self.expression = ""
+        self.expr_var.set("0")
+
     def show_unlock_popup(self):
         if self.unlocked or self.computed_answer is None:
             return
